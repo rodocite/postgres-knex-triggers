@@ -2,7 +2,7 @@
 Playing around w/ Postgres triggers in Knex.
 Records written to `users` will fire a Postgres trigger that writes the event into the `events` table.
 
-1. create pg_trigger
+1. create `pg_trigger` db
 2. create `users` table
 3 create `events` table
 3. create `log_event()` postgres function
