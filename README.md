@@ -27,6 +27,47 @@ Record 1 - Lulu Jackson age 46 was deleted.
 Record 2 - Rodolfo Yabut age 37 was created.
 ```
 
+## Code
+The trigger:
+```sql
+CREATE TRIGGER event
+    AFTER INSERT OR UPDATE OR DELETE ON users
+    FOR EACH ROW
+    EXECUTE PROCEDURE log_event();
+```
+
+The function the trigger is using:
+```sql
+  CREATE OR REPLACE FUNCTION log_event()
+    RETURNS trigger AS $$
+    BEGIN
+      INSERT INTO events (
+        record_id,
+        old_first_name,
+        old_last_name,
+        old_age,
+        first_name,
+        last_name,
+        age,
+        event,
+        last_update
+      )
+      VALUES (
+        NEW.id,
+        OLD.first_name,
+        OLD.last_name,
+        OLD.age,
+        NEW.first_name,
+        NEW.last_name,
+        NEW.age,
+        TG_OP,
+        now()
+      );
+      RETURN NEW;
+    END
+  $$ language 'plpgsql';
+```
+
 ## License
 
 MIT © [rodocite](https://github.com/rodocite)
