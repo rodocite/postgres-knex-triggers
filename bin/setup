@@ -1,0 +1,7 @@
+#!/bin/bash
+
+dropdb pg_trigger &&
+createdb pg_trigger &&
+yarn knex migrate:latest &&
+node ./seed.js &
+yarn dev

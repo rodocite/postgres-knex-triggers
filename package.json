@@ -1,0 +1,28 @@
+{
+	"name": "postgres-trigger-example",
+	"description": "My exquisite project with Next.js",
+	"repository": "rodocite/postgres-trigger-example",
+	"author": {
+		"name": "rodocite",
+		"email": "rodolfoyabut@gmail.com"
+	},
+	"scripts": {
+		"dev": "node server.js",
+		"build": "next build",
+		"setup": "bin/setup",
+    "start": "next start",
+    "prettier-fix": "prettier --write --no-semi './**/*.{js,jsx}' './**/*.css **/*.json'"
+	},
+	"dependencies": {
+		"axios": "^0.18.0",
+		"express": "^4.16.4",
+		"knex": "^0.16.3",
+		"next": "^7.0.2",
+		"pg": "^7.7.1",
+		"prettier": "^1.15.3",
+		"random-age": "^1.0.2",
+		"random-fullName": "^1.0.0",
+		"react": "^16.7.0",
+		"react-dom": "^16.7.0"
+	}
+}
