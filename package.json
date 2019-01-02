@@ -11,7 +11,7 @@
 		"build": "next build",
 		"setup": "bin/setup",
     "start": "next start",
-    "prettier-fix": "prettier --write --no-semi './**/*.{js,jsx}' './**/*.css **/*.json'"
+    "lint-fix": "prettier --write --no-semi './**/*.{js,jsx}' './**/*.css **/*.json'"
 	},
 	"dependencies": {
 		"axios": "^0.18.0",
